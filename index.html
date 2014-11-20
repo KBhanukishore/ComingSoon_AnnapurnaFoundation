@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Annapurna Foundation</title>
+
+<script src="jquery.js" type="text/javascript"></script>
+<script src="countdown.js" type="text/javascript"></script>
+
+<style type="text/css">
+	body {
+		background-image:url(coming_soon2.jpg);
+		background-repeat:no-repeat;
+		background-position:top;
+		alignment-adjust:central;
+		background-size:100%;
+	}
+	#timer {
+		position:relative;
+		alignment-adjust:central;
+		color:#FFF;
+		top:350px;
+	}
+	#link {
+		position:relative;
+		alignment-adjust:central;
+		text-align:center;
+		font-size:20px;
+		color:#FFF;
+		top:390px;
+	}
+	#link a {color:rgb(157, 221, 150)}
+	
+	#login_field {
+		padding: 8px 10px;
+		background-color: #fff;
+		border: 1px solid #DDD;
+		border-radius: 0;
+		color: #656565;
+		font-size: 16px;
+		font-family: ruda;
+		transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+		margin-top: 10px;
+		width: 300px;
+		box-shadow: 3px 3px 5px #303030;
+	}
+     #subscribe {
+		height: 38px;
+		margin-left: 5px;
+		background: #449d44;
+		color: white;
+		border: 0;
+		font-size: medium;
+		box-shadow: 3px 3px 5px #303030;
+		border-radius: 0.3em;
+		cursor: pointer;
+	}
+	#subscribe:hover {
+	background: #4EB54E;
+	}
+
+		
+</style>
+
+<script>
+
+function post_details() {
+$(document).ready(function(){
+  $.post("addcontact.php",
+  {
+    email:document.getElementById("login_field").value,
+    
+  },
+  function(data,status){
+    document.getElementById("login_field").value = "" ;
+    alert(data);
+	
+  });
+  });
+}
+
+</script>
+
+
+</head>
+
+<body>
+<div id="timer">
+
+<script type="application/javascript">
+var myCountdown1 = new Countdown({ 
+									year	: 2014,
+                             		month	: 12, 
+                             		day		: 1, 
+                             		hour	: 0,
+                             		ampm	: "am",
+                             		minute	: 0, 
+                             		second	: 0	,// < - no comma on last item!!
+									width	:500,
+									height	:100,  
+									rangeHi	:"day",
+									style	:"flip"	// <- no comma on last item!
+									});
+
+</script>
+
+</div>
+<div id="link"> <a href="http://wethechangemission.org/">Click here</a> to see our city impact <br/><br/>
+<div ><input id="login_field" type="text" placeholder="Enter your email Id for updates" />
+<button id="subscribe" onClick="post_details()">Subscribe</button></div>
+</div>
+
+
+<script>
+
+$(document).ready(function(){
+$("#Stage_jbeeb_3").css({"margin-right":"auto", "margin-left":"auto"});
+});
+</script>
+
+</body>
+</html>
